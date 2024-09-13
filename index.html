@@ -1,0 +1,31 @@
+<html>
+<body>
+<h1>Tabuada do Seu Juca</h1>
+<label>Insira um número: <input type="number" id="numero" ></label><br>
+<button onclick="gerarTabuada() ">Gerar Tabuada</button>
+<div id="resultado"></div>
+
+<script> 
+function gerarTabuada(){
+//Obtém o número inserido pelo usuário
+let numero = parseInt(document.getElementById("numero").value);
+
+// Verifica se o número é válido
+if (isNaN(numero)){
+  document.getElementById("resultado").innerHTML = "Por favor, insira um número válido";
+  return;
+}
+
+// Gera a tabuada do número 
+let resultado = "<h2>Tabuada do " + numero + "</h2>";
+resultado += "<ul>";
+for (let i = 1; i <= 10; i++){
+ resultado += "<li>" + numero + " x " + i + " = " + (numero * i) + "</li>";
+ }
+ resultado += "</ul>";
+ // Exibe o resultado na página HTML
+ document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+</body>
+</html>
